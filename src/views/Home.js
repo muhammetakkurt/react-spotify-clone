@@ -1,5 +1,5 @@
 import React from "react";
-import Feeds from "../compontents/Feeds";
+import Feeds from "../components/Feeds";
 
 const Home = () => {
   const suggestions = [
