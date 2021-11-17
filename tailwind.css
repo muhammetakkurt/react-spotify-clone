@@ -1,0 +1,90 @@
+@tailwind base;
+@tailwind utilities;
+@tailwind components;
+
+@layer base {
+  html,
+  body,
+  #root {
+    @apply h-full bg-backdrop text-white;
+  }
+}
+
+.wrapper {
+  @apply flex;
+  height: calc(100% - theme("spacing.24"));
+}
+.content-header {
+  @apply w-full flex justify-between items-center h-16;
+}
+.content-header-button {
+  @apply bg-black rounded-full px-1 py-1 text-white mr-4;
+}
+.content-header-user-widget {
+  @apply flex flex-row items-center gap-2 pr-4 bg-black rounded-full;
+}
+.content {
+  @apply flex-auto px-5 py-2 overflow-auto;
+  width: calc(100% - theme("spacing.60"));
+}
+.sidebar {
+  @apply flex flex-col w-60 bg-black text-white pt-6 px-2;
+}
+.logo {
+  @apply px-3;
+}
+.menu-item {
+  @apply px-3 py-2 h-10 flex items-center  text-link font-semibold rounded antialiased gap-3;
+}
+.menu-item__active {
+  @apply bg-active text-white;
+}
+.collection-item {
+  @apply px-3 py-2 h-10 flex items-center group-hover:bg-active hover:text-white text-link font-semibold rounded antialiased gap-3 cursor-pointer;
+}
+.playlists {
+  @apply px-3 mt-2 pt-2 border-t border-link border-opacity-25 overflow-auto inset-0 text-sm;
+}
+.playlist-item {
+  @apply h-8 text-link cursor-pointer hover:text-white;
+}
+.install-app {
+  @apply flex justify-items-center items-center gap-4 px-3 text-center h-14 text-sm text-link cursor-pointer hover:text-white;
+}
+.bottom-bar {
+  @apply fixed flex px-4 justify-between items-center bottom-0 h-24 bg-footer text-white w-full;
+}
+.bottom-bar__current-track {
+  @apply flex flex-row gap-6 items-center;
+}
+.large-cards {
+  @apply grid 2xl:grid-cols-5 xl:grid-cols-5 lg:grid-cols-3 md:grid-cols-3 grid-cols-2 gap-6 mt-5;
+}
+.large-cards-card {
+  @apply flex flex-row gap-4 items-center bg-active rounded antialiased text-sm font-bold hover:bg-white hover:bg-opacity-20 transition-colors cursor-pointer;
+}
+.cards {
+  @apply flex gap-4 mt-5;
+}
+.cards-card {
+  @apply flex flex-col w-52 h-72 py-4 gap-4 px-4 bg-active rounded antialiased text-sm font-bold hover:bg-white hover:bg-opacity-20 transition-colors cursor-pointer;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 2px;
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 100vh;
+  @apply bg-black;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 100vh;
+  @apply border border-gray-600 bg-gray-600;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-gray-600;
+}
